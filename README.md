@@ -29,3 +29,61 @@
     - [ ] If the car name is blank or more than 6 characters.
     - [ ] If the number of rounds is not a number.
 
+---  
+
+## (temp) Checklist
+
+1. Environment setup
+    - Action
+    - [ ] Kotlin 1.9.24
+    - [ ] Fork & Clone repository
+    - [ ] Draft feature list on `README.md` file.
+    - [ ] Write `main()` function in `Application.kt` file.
+    - Checkpoint
+    - [ ] Check whether `./gradlew clean test` run or not.
+    - [ ] Check whether the environment can build and run Kotlin project or not.
+2. Writing feature list
+    - Action
+    - [ ] Refine the list. (add/remove)
+    - Checkpoint
+    - [ ] Check to git-commit once list been edited.
+3. Git convention
+    - Action
+    - [ ] Git-commit by feature level.
+    - Checkpoint
+    - [ ] Check commit messages are separated by feature.
+    - [ ] Check commit messages start with <types>.
+        - <types>: feat:, refactor:, fix:, test:, docs:, chore:, style:
+4. Feature implementation
+    - Action
+    - [ ] Checkout [Feature List](#List-of-Features).
+    - Checkpoint
+    - [ ] Use `Console` and `Randoms` APIs.
+    - [ ] Check cases of exception once again.
+5. Writing test code
+    - Action
+    - [ ] Write test code about core logic based on JUnit5 & AssertJ.
+    - [ ] Test features in [Feature List](#List-of-Features).
+    - Checkpoint
+    - [ ] Check the test gain. No pass no gain.
+    - [ ] Make sure `BUILD SUCCESSFUL` from `./gradlew clean test`.
+6. Code refactoring
+    - Action
+    - [ ] Split functions to single tasks.
+    - [ ] Refactor to avoid exceeding 2 levels of indentation.
+    - Checkpoint
+    - [ ] NO `if` inside `while` inside `if` or whatever.
+    - [ ] Did you avoid nesting, and extracted proper function?
+    - [ ] Did you follow Kotlin Coding Conventions?
+7. Before final submission
+    - Checkpoint
+    - [ ] Does the output format match the requirements?
+    - [ ] Does the program terminate when an exception occurs?
+    - [ ] Does the program pass all tests?
+    - [ ] Does the feature list and commit logs link well?
+8. Submission (expect to do)
+    - Checkpoint
+    - [ ] Complete code push on `origin`.
+    - [ ] Complete Pull Request on `upstream`.
+    - [ ] Complete submission on mission page.
+    - [ ] Write review on submission form.
