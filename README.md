@@ -29,7 +29,30 @@
     - [ ] If the car name is blank or more than 6 characters.
     - [ ] If the number of rounds is not a number.
 
----  
+---
+
+## (temp) Approach
+
+- Build program with MVC architecture
+    - Model
+        - Car
+        - Round
+        - Winner
+        - ...
+    - View
+        - InputView
+        - ResultView
+        - WinnerView
+        - ...
+    - Controller
+        - GameMaster
+        - RoundManager
+        - ...
+    - Utility
+        - RandomMoveGenerator
+        - ...
+
+---
 
 ## (temp) Checklist
 
