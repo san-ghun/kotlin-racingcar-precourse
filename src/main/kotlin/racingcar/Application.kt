@@ -1,17 +1,19 @@
 package racingcar
 
+import camp.nextstep.edu.missionutils.Console
+
 fun main() {
-    // TODO: Implement input process
+    
+    println("Enter the names of the cars (comma-separated):")
+    val readLine = Console.readLine()
 
-    // Take car names from user input -> list
-    // Use Console api
+    var carNames = readLine.split(",")
 
-    // Separate string with ','
+    carNames = carNames.filter { it.isNotEmpty() }.filter { it.isNotBlank() }
 
-    // Validate input
+    val cars = carNames.map { name ->
+        Car(name)
+    }
 
-    // Create new Car() instance
-
-    // Create list of Car()
-
+    return
 }
