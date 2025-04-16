@@ -18,9 +18,13 @@ fun main() {
     return
 }
 
+// TODO: Find better way to extract the function into new location other than Application.kt file
 fun readCarNames(): List<String> {
     println("Enter the names of the cars (comma-separated):")
     val userInput = Console.readLine()
+
+    // Should I throw error on blank?
+    // TODO: Separate parsing
     val carNames = userInput.split(",")
         .map { it.trim() }
         .filter { it.isNotEmpty() }
