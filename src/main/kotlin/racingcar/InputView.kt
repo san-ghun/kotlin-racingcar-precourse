@@ -6,13 +6,14 @@ object InputView {
     fun readCarNames(): List<String> {
         println("Enter the names of the cars (comma-separated):")
         val userInput = Console.readLine()
+        return parseCarNames(userInput)
+    }
 
-        // Should I throw error on blank?
-        // TODO: Separate parsing
-        val carNames = userInput.split(",")
+    // Checkpoint: Should I throw error on blank?
+    private fun parseCarNames(input: String): List<String> {
+        return input.split(",")
             .map { it.trim() }
             .filter { it.isNotEmpty() }
             .filter { it.isNotBlank() }
-        return carNames
     }
 }
