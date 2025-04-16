@@ -33,7 +33,7 @@
 
 ## (temp) Approach
 
-- Build program with MVC architecture
+- Build program with MVC pattern
     - Model
         - Car
         - Round
