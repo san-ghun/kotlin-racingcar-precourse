@@ -9,7 +9,6 @@ object InputView {
         return parseCarNames(userInput)
     }
 
-    // Checkpoint: Should I throw error on blank? -> Delegate the validation check to Car() class
     fun parseCarNames(input: String): List<String> {
         return input.split(",")
             .map { it.trim() }

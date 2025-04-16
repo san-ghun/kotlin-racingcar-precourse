@@ -1,5 +1,10 @@
 package racingcar
 
-// TODO: Alter the class from data class to normal class
-// TODO: Add initializer to validate 'name' parameter
-data class Car(val name: String, val position: Int = 0)
+class Car(val name: String, val position: Int = 0) {
+
+    init {
+        require(name.length in 1..5) {
+            "The car name must be at least 1 character and no more than 5 characters. Input value: '$name'"
+        }
+    }
+}
