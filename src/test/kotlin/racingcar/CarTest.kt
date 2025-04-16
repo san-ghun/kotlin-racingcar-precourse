@@ -2,6 +2,8 @@ package racingcar
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.assertThrows
 
 class CarTest {
     @Test
@@ -22,5 +24,16 @@ class CarTest {
 
     @Test
     fun `throw exception when car name is empty or more than 6 characters`() {
+        val invalidNames = listOf("", "wonjun", "     ")
+
+        invalidNames.forEach { name ->
+            val exception = assertThrows<IllegalArgumentException> {
+                Car(name.trim())
+            }
+            assertEquals(
+                "The car name must be at least 1 character and no more than 5 characters. Input value: '${name.trim()}'",
+                exception.message
+            )
+        }
     }
 }
