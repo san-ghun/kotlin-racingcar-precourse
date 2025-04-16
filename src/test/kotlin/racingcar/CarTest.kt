@@ -14,6 +14,10 @@ class CarTest {
 
     @Test
     fun `can create when car name has 1 to 5 characters`() {
+        val names = listOf("a", "abc", "pobi", "wonis")
+        names.forEach { name ->
+            Car(name)
+        }
     }
 
     @Test
