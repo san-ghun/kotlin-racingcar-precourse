@@ -10,7 +10,7 @@ object InputView {
     }
 
     // Checkpoint: Should I throw error on blank?
-    private fun parseCarNames(input: String): List<String> {
+    fun parseCarNames(input: String): List<String> {
         return input.split(",")
             .map { it.trim() }
             .filter { it.isNotEmpty() }
