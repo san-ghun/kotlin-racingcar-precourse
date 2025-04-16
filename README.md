@@ -11,8 +11,8 @@
 ## List of Features
 
 1. Take input for car names
-    - [ ] The user enters car names separated by commas (,).
-    - [ ] Each name must be at least 1 character and no more than 5 characters.
+    - [x] The user enters car names separated by commas (,).
+    - [x] Each name must be at least 1 character and no more than 5 characters.
 2. Take input for number of rounds
     - [ ] The user enters the number of rounds.
     - [ ] Must be a number greater than or equal to 1.
