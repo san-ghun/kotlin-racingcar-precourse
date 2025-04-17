@@ -11,7 +11,7 @@ class CarTest {
         val car = Car("pobi")
 
         assertThat(car.name).isEqualTo("pobi")
-        assertThat(car.position).isEqualTo(0)
+        assertThat(car.getPosition()).isEqualTo(0)
     }
 
     @Test
