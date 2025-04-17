@@ -27,9 +27,7 @@ class CarTest {
         val invalidNames = listOf("", "wonjun", "     ")
 
         invalidNames.forEach { name ->
-            val exception = assertThrows<IllegalArgumentException> {
-                Car(name.trim())
-            }
+            val exception = assertThrows<IllegalArgumentException> { Car(name.trim()) }
             assertEquals(
                 "The car name must be at least 1 character and no more than 5 characters. Input value: '${name.trim()}'",
                 exception.message

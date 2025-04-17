@@ -26,9 +26,7 @@ class InputViewTest {
     fun `throw exception if the number of rounds is not a number`() {
         val invalidInputs = listOf("", " ", "a", "race", "  b  ", "3333333333", "3.14")
         invalidInputs.forEach { input ->
-            val exception = assertThrows<IllegalArgumentException> {
-                InputView.convertRoundCount(input)
-            }
+            val exception = assertThrows<IllegalArgumentException> { InputView.convertRoundCount(input) }
             assertEquals(
                 "The number of rounds should be a number.",
                 exception.message
@@ -40,9 +38,7 @@ class InputViewTest {
     fun `throw exception if the number of rounds is less than or equal to 0`() {
         val invalidNumbers = listOf(0, -1, -2147483647)
         invalidNumbers.forEach { number ->
-            val exception = assertThrows<IllegalArgumentException> {
-                InputView.validateRoundCount(number)
-            }
+            val exception = assertThrows<IllegalArgumentException> { InputView.validateRoundCount(number) }
             assertEquals(
                 "The number of rounds must be a number greater than or equal to 1.",
                 exception.message
