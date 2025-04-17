@@ -13,11 +13,13 @@ fun main() {
     cars.forEach { println("${it.name} ${it.getPosition()}")}
     println("Round count: $roundCount")
 
-    // Create and initialize an object 'GameMaster'
+    // Create and initialize an object 'RoundManager'
 
     // Start game
 
     // Iterate through rounds
+
+        // Move all cars
 
         // Show the result of round
 
