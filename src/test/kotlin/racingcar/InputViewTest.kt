@@ -19,4 +19,19 @@ class InputViewTest {
 
         assertThat(result).containsExactly("pobi", "woni", "jun")
     }
+
+    @Test
+    fun `throw exception if the number of rounds is not a number`() {
+
+    }
+
+    @Test
+    fun `throw exception if the number of rounds is less than or equal to 0`() {
+
+    }
+
+    @Test
+    fun `pass with the valid number of rounds`() {
+
+    }
 }
