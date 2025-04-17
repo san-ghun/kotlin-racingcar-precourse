@@ -14,8 +14,8 @@
     - [x] The user enters car names separated by commas (,).
     - [x] Each name must be at least 1 character and no more than 5 characters.
 2. Take input for number of rounds
-    - [ ] The user enters the number of rounds.
-    - [ ] Must be a number greater than or equal to 1.
+    - [x] The user enters the number of rounds.
+    - [x] Must be a number greater than or equal to 1.
 3. Implement logic for car to move forward
     - [ ] The car decides whether to move forward based on a random value (0 to 9).
     - [ ] If it is 4 or more, it moves forward.
