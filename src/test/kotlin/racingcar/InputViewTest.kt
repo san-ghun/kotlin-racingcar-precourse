@@ -36,7 +36,7 @@ class InputViewTest {
 
     @Test
     fun `throw exception if the number of rounds is less than or equal to 0`() {
-        val invalidNumbers = listOf(0, -1, -2147483647)
+        val invalidNumbers = listOf(0, -1, -2147483648)
         invalidNumbers.forEach { number ->
             val exception = assertThrows<IllegalArgumentException> { InputView.validateRoundCount(number) }
             assertEquals(
