@@ -34,4 +34,9 @@ class CarTest {
             )
         }
     }
+
+    @Test
+    fun `car moveForward test`() {
+        
+    }
 }
