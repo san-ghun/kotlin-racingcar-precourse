@@ -19,8 +19,18 @@ object InputView {
     fun readRoundCount(): Int {
         println("How many rounds will be played?")
         val userInput = Console.readLine()
+        val trimmedInput = userInput.trim()
+        val count = convertRoundCount(trimmedInput)
+        return validateRoundCount(count)
+    }
+
+    fun convertRoundCount(input: String): Int {
         val count =
-            userInput.toIntOrNull() ?: throw IllegalArgumentException("The number of rounds should be a number.")
+            input.toIntOrNull() ?: throw IllegalArgumentException("The number of rounds should be a number.")
+        return count
+    }
+
+    fun validateRoundCount(count: Int): Int {
         if (count <= 0) {
             throw IllegalArgumentException("The number of rounds must be a number greater than or equal to 1.")
         }
