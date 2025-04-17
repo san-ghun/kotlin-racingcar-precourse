@@ -16,21 +16,14 @@ object InputView {
             .filter { it.isNotBlank() }
     }
 
-    // TODO: Implement how to read round count
     fun readRoundCount(): Int {
-        // Display message to user asking for how many rounds
-        //println()
-
-        // Take user input
-        //val userInput = Console.readLine()
-
-        // Validate the string is a positive number
-        //val count = userInput.toIntOrNull() ?: throw
-
-        // If invalid, throw 'IllegalArgumentException'
-        //if (count <= 0) {}
-
-        //return count
-        return 0
+        println("How many rounds will be played?")
+        val userInput = Console.readLine()
+        val count =
+            userInput.toIntOrNull() ?: throw IllegalArgumentException("The number of rounds should be a number.")
+        if (count <= 0) {
+            throw IllegalArgumentException("The number of rounds must be a number greater than or equal to 1.")
+        }
+        return count
     }
 }
