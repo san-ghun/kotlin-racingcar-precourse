@@ -37,6 +37,23 @@ class CarTest {
 
     @Test
     fun `car moveForward test`() {
-        
+        val values = listOf(4, 5, 6, 7, 8, 9)
+
+        values.forEach { value ->
+            val testCar = Car("test")
+            testCar.moveForward(value)
+            assertEquals(1, testCar.getPosition())
+        }
+    }
+
+    @Test
+    fun `car do not moveForward test`() {
+        val values = listOf(0, 1, 2, 3)
+
+        values.forEach { value ->
+            val testCar = Car("test")
+            testCar.moveForward(value)
+            assertEquals(0, testCar.getPosition())
+        }
     }
 }
