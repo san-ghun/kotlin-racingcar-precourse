@@ -10,7 +10,7 @@ fun main() {
     val roundCount = InputView.readRoundCount()
 
     println("Car list:")
-    cars.forEach { println("${it.name} ${it.position}")}
+    cars.forEach { println("${it.name} ${it.getPosition()}")}
     println("Round count: $roundCount")
 
     // Create and initialize an object 'GameMaster'
