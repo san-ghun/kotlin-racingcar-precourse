@@ -23,6 +23,18 @@ class InputViewTest {
     }
 
     @Test
+    fun `parseCarName test - throw exception on empty input`() {
+        val invalidInputs = listOf("", " ", "   ", ",", " ,", ", ", ",,,,", "   , ,, ,,, ")
+        invalidInputs.forEach { input ->
+            val exception = assertThrows<IllegalArgumentException> { InputView.parseCarNames(input) }
+            assertEquals(
+                "No names are entered.",
+                exception.message
+            )
+        }
+    }
+
+    @Test
     fun `throw exception if the number of rounds is not a number`() {
         val invalidInputs = listOf("", " ", "a", "race", "  b  ", "3333333333", "3.14")
         invalidInputs.forEach { input ->
