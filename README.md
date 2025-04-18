@@ -17,8 +17,8 @@
     - [x] The user enters the number of rounds.
     - [x] Must be a number greater than or equal to 1.
 3. Implement logic for car to move forward
-    - [ ] The car decides whether to move forward based on a random value (0 to 9).
-    - [ ] If it is 4 or more, it moves forward.
+    - [x] The car decides whether to move forward based on a random value (0 to 9).
+    - [x] If it is 4 or more, it moves forward.
 4. Output results in each round
     - [ ] For each round, output the names of all cars and their movement results.
     - [ ] The movement results are expressed as `-` symbols.
