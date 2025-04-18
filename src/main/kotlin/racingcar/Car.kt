@@ -16,4 +16,8 @@ class Car(val name: String) {
     fun moveForward(randomValue: Int) {
         if (randomValue >= 4) { _position++ }
     }
+
+    fun drawPosition(): String {
+        return "-".repeat(position)
+    }
 }
