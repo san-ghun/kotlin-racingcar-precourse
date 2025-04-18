@@ -1,6 +1,6 @@
 package racingcar
 
-class Car(val name: String, private var position: Int = 0) {
+class Car(val name: String) {
 
     init {
         require(name.length in 1..5) {
@@ -8,9 +8,12 @@ class Car(val name: String, private var position: Int = 0) {
         }
     }
 
-    fun moveForward(randomValue: Int) {
-        if (randomValue >= 4) { position++ }
-    }
+    val position: Int
+        get() = _position
 
-    fun getPosition(): Int = position
+    private var _position = 0
+
+    fun moveForward(randomValue: Int) {
+        if (randomValue >= 4) { _position++ }
+    }
 }
