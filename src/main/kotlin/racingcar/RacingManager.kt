@@ -2,11 +2,12 @@ package racingcar
 
 class RacingManager(val cars: List<Car>, val roundCount: Int) {
     private val generator = RandomValueGenerator
-    private var currentRound = 0
+    val currentRound: Int
+        get() = _currentRound
 
-    fun getCurrentRound(): Int = currentRound
+    private var _currentRound = 0
 
-    fun goNextRound() { currentRound++ }
+    fun goNextRound() { _currentRound++ }
 
     fun moveAllCars() {
         cars.forEach { car ->
