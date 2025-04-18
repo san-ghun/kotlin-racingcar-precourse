@@ -56,4 +56,15 @@ class CarTest {
             assertEquals(0, testCar.position)
         }
     }
+
+    @Test
+    fun `draw position test`() {
+        val positions = listOf(0, 1, 3, 7)
+
+        positions.forEach { position ->
+            val car = Car("test")
+            repeat(position) { car.moveForward(5) }
+            assertEquals("-".repeat(position), car.drawPosition())
+        }
+    }
 }
