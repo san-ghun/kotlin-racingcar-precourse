@@ -3,7 +3,7 @@ package racingcar
 class Car(val name: String) {
 
     init {
-        require(name.length in 1..5) {
+        require(name.isNotBlank() && name.length in 1..5) {
             "The car name must be at least 1 character and no more than 5 characters. Input value: '$name'"
         }
     }
