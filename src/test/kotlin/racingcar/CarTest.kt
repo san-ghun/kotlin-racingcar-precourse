@@ -24,12 +24,12 @@ class CarTest {
 
     @Test
     fun `throw exception when car name is empty or more than 6 characters`() {
-        val invalidNames = listOf("", "wonjun", "     ")
+        val invalidNames = listOf("", "wonjun", "  ab  ", "     ", " ")
 
         invalidNames.forEach { name ->
-            val exception = assertThrows<IllegalArgumentException> { Car(name.trim()) }
+            val exception = assertThrows<IllegalArgumentException> { Car(name) }
             assertEquals(
-                "The car name must be at least 1 character and no more than 5 characters. Input value: '${name.trim()}'",
+                "The car name must be at least 1 character and no more than 5 characters. Input value: '${name}'",
                 exception.message
             )
         }
