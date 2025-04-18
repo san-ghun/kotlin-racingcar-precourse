@@ -10,10 +10,18 @@ object InputView {
     }
 
     fun parseCarNames(input: String): List<String> {
-        return input.split(",")
+        val names = input.split(",")
             .map { it.trim() }
             .filter { it.isNotEmpty() }
             .filter { it.isNotBlank() }
+        return validateCarNames(names)
+    }
+
+    fun validateCarNames(names: List<String>): List<String> {
+        if (names.isNullOrEmpty()) {
+            throw IllegalArgumentException("No names are entered.")
+        }
+        return names
     }
 
     fun readRoundCount(): Int {
