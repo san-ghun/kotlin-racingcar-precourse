@@ -11,7 +11,7 @@ class CarTest {
         val car = Car("pobi")
 
         assertThat(car.name).isEqualTo("pobi")
-        assertThat(car.getPosition()).isEqualTo(0)
+        assertThat(car.position).isEqualTo(0)
     }
 
     @Test
@@ -42,7 +42,7 @@ class CarTest {
         values.forEach { value ->
             val testCar = Car("test")
             testCar.moveForward(value)
-            assertEquals(1, testCar.getPosition())
+            assertEquals(1, testCar.position)
         }
     }
 
@@ -53,7 +53,7 @@ class CarTest {
         values.forEach { value ->
             val testCar = Car("test")
             testCar.moveForward(value)
-            assertEquals(0, testCar.getPosition())
+            assertEquals(0, testCar.position)
         }
     }
 }
