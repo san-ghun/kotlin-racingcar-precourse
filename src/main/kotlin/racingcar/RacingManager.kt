@@ -10,21 +10,15 @@ class RacingManager(val cars: List<Car>, val roundCount: Int) {
     fun goNextRound() { currentRound++ }
 
     fun moveAllCars() {
-        // iterate list of Car()
-
-            // car.moveForward() with random value as argument
-            // and update car's position
+        cars.forEach { car ->
+            car.moveForward(generator.generateNumber())
+        }
     }
 
     fun findWinners(): List<Car> {
-        // make list of position of car
-
-        // find max position value from the list
-
-        // filter 'cars' with max position value
-
-        // return the filtered list of car
-        return TODO("filtered list of car")
+        val scoreBoard = cars.map { it.position }
+        val winnerPosition = scoreBoard.maxOrNull()
+        return cars.filter { it.position == winnerPosition }
     }
 
 }
