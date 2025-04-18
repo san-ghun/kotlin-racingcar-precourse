@@ -5,9 +5,11 @@ class RacingManager(val cars: List<Car>, val roundCount: Int) {
     val currentRound: Int
         get() = _currentRound
 
-    private var _currentRound = 0
+    private var _currentRound = 1
 
     fun goNextRound() { _currentRound++ }
+
+    fun isRacing(): Boolean = this.currentRound <= this.roundCount
 
     fun moveAllCars() {
         cars.forEach { car ->
