@@ -1,7 +1,6 @@
 package racingcar
 
 class RacingManager(val cars: List<Car>, val roundCount: Int) {
-    private val carCount = cars.size
     private val generator = RandomValueGenerator
     private var currentRound = 0
 
