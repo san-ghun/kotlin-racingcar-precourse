@@ -9,6 +9,6 @@ object ResultView {
     }
 
     fun printWinners(winners: List<Car>) {
-        println("Winners : ${winners.joinToString { it.name }}")
+        println("Winners : ${winners.joinToString(", ") { it.name }}")
     }
 }
