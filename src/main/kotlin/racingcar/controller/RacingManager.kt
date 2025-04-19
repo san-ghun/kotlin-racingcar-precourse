@@ -1,4 +1,8 @@
-package racingcar
+package racingcar.controller
+
+import racingcar.util.RandomValueGenerator
+import racingcar.util.ValueGenerator
+import racingcar.model.Car
 
 class RacingManager(
     val cars: List<Car>,

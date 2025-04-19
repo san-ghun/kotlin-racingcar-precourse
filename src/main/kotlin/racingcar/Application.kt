@@ -1,5 +1,10 @@
 package racingcar
 
+import racingcar.controller.RacingManager
+import racingcar.model.Car
+import racingcar.view.InputView
+import racingcar.view.ResultView
+
 fun main() {
     val carNames = InputView.readCarNames()
     val cars = carNames.map { name ->

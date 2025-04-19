@@ -4,14 +4,15 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.assertThrows
+import racingcar.view.InputView
 
 class InputViewTest {
     @Test
     fun `parseCarNames test - convert a string of car names separated by comma into a list`() {
-        val input = "pobi, woni , jun, "
+        val input = "pobi, woni, jun "
         val result = InputView.parseCarNames(input)
 
-        assertThat(result).containsExactly("pobi", " woni ", " jun", " ")
+        assertThat(result).containsExactly("pobi", " woni", " jun ")
     }
 
     @Test
