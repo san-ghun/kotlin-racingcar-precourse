@@ -8,31 +8,33 @@ fun main() {
 
     val roundCount = InputView.readRoundCount()
 
-    println("Car list:")
-    cars.forEach { println("${it.name} ${it.getPosition()}")}
-    println("Round count: $roundCount")
-
     // Create and initialize an object 'RacingManager'
-    //val manager = RacingManager()
+    val manager = RacingManager(cars, roundCount)
 
     // Start game
-    //manager.goNextRound()
+    println()
 
     // Iterate through rounds
-    //while (manager.getCurrentRound() <= roundCount) {}
+    while (manager.isRacing()) {
 
         // Move all cars
-        //manager.moveAllCars()
+        manager.moveAllCars()
 
         // Show the result of round
         //ResultView.printRace(cars)
+        cars.forEach { car ->
+            println("${car.name} : ${car.drawPosition()}")
+        }
+        println()
 
         // Go next round
-        //manager.goNextRound()
+        manager.goNextRound()
+    }
 
     // Show winner(s)
-    //val winners = manager.findWinners()
+    val winners = manager.findWinners()
     //ResultView.printWinners(winners)
+    println("Winners : ${winners.joinToString { it.name }}")
 
     return
 }
