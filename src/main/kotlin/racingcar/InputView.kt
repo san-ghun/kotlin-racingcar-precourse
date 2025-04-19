@@ -11,9 +11,6 @@ object InputView {
 
     fun parseCarNames(input: String): List<String> {
         val names = input.split(",")
-            .map { it.trim() }
-            .filter { it.isNotEmpty() }
-            .filter { it.isNotBlank() }
         return validateCarNames(names)
     }
 
