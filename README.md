@@ -24,9 +24,9 @@
     - [x] The movement results are expressed as `-` symbols.
 5. Determine and output the winner(s)
     - [x] The car(s) that moved the most are determined as the winner.
-    - [ ] If there are multiple winners, output them separated by commas.
+    - [x] If there are multiple winners, output them separated by commas.
 6. Handle exceptions
-    - [ ] If the car name is blank or more than 6 characters.
+    - [x] If the car name is blank or more than 6 characters.
     - [x] If the number of rounds is not a number.
 
 ---
