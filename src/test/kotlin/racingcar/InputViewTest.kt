@@ -39,6 +39,30 @@ class InputViewTest {
     }
 
     @Test
+    fun `validateCarNames test - throw exception if a name is blank`() {
+        val invalidNames = listOf("", " ", "    ")
+        invalidNames.forEach { name ->
+            val exception = assertThrows<IllegalArgumentException> { InputView.isNameNotBlankOrLessThanFive(name) }
+            assertEquals(
+                "Car names must be between 1 and 5 characters. Input value: '$name'",
+                exception.message
+            )
+        }
+    }
+
+    @Test
+    fun `validateCarNames test - throw exception if a name longer than 5`() {
+        val invalidNames = listOf(" a    ", "a bb a", "  ab  ")
+        invalidNames.forEach { name ->
+            val exception = assertThrows<IllegalArgumentException> { InputView.isNameNotBlankOrLessThanFive(name) }
+            assertEquals(
+                "Car names must be between 1 and 5 characters. Input value: '$name'",
+                exception.message
+            )
+        }
+    }
+
+    @Test
     fun `convertRoundCount test - throw exception if the number of rounds is not a number`() {
         val invalidInputs = listOf("", " ", "a", "race", "  b  ", "3333333333", "3.14")
         invalidInputs.forEach { input ->
