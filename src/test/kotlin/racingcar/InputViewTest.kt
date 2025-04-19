@@ -11,27 +11,30 @@ class InputViewTest {
         val input = "pobi, woni , jun, "
         val result = InputView.parseCarNames(input)
 
-        assertThat(result).containsExactly("pobi", "woni", "jun")
+        assertThat(result).containsExactly("pobi", " woni ", " jun", " ")
     }
 
     @Test
-    fun `parseCarNames test - exclude blank or empty names`() {
-        val input = "pobi,    woni  , ,   , jun,   , "
-        val result = InputView.parseCarNames(input)
+    fun `validateCarNames test - throw exception if the list of name is empty or null`() {
+        val names = emptyList<String>()
+        val exception = assertThrows<IllegalArgumentException> { InputView.validateCarNames(names) }
 
-        assertThat(result).containsExactly("pobi", "woni", "jun")
+        assertEquals(
+            "No names are entered.",
+            exception.message
+        )
     }
 
     @Test
-    fun `parseCarNames test - throw exception on empty input`() {
-        val invalidInputs = listOf("", " ", "   ", ",", " ,", ", ", ",,,,", "   , ,, ,,, ")
-        invalidInputs.forEach { input ->
-            val exception = assertThrows<IllegalArgumentException> { InputView.parseCarNames(input) }
-            assertEquals(
-                "No names are entered.",
-                exception.message
-            )
-        }
+    fun `validateCarNames test - pass if the list of name has a name`() {
+        val names = listOf("test")
+        InputView.validateCarNames(names)
+    }
+
+    @Test
+    fun `validateCarNames test - pass if the list of name has names`() {
+        val names = listOf("a", "b", "test")
+        InputView.validateCarNames(names)
     }
 
     @Test
