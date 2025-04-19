@@ -69,8 +69,8 @@ class RacingManagerTest {
     }
 
     @Test
-    fun `findWinner() test`() {
-        val testCars = listOf(Car("a"), Car("b"))
+    fun `findWinner() single winner test`() {
+        val testCars = listOf(Car("a"), Car("b"), Car("c"))
         val testRoundCount = 3
         val manager = RacingManager(
             testCars,
@@ -78,9 +78,30 @@ class RacingManagerTest {
             TestDoNotMoveValueGenerator
         )
 
-        manager.cars[0].moveForward(0)
-        manager.cars[1].moveForward(9)
-        val expected = testCars.subList(1, 2)
+        repeat(1) { manager.cars[0].moveForward(0) }
+        repeat(1) { manager.cars[1].moveForward(9) }
+        repeat(2) { manager.cars[2].moveForward(9) }
+
+        val expected = testCars.subList(2, 3)
+        val testResult = manager.findWinners()
+        assertEquals(expected, testResult)
+    }
+
+    @Test
+    fun `findWinner() multiple winner test`() {
+        val testCars = listOf(Car("a"), Car("b"), Car("c"))
+        val testRoundCount = 3
+        val manager = RacingManager(
+            testCars,
+            testRoundCount,
+            TestDoNotMoveValueGenerator
+        )
+
+        repeat(1) { manager.cars[0].moveForward(0) }
+        repeat(2) { manager.cars[1].moveForward(9) }
+        repeat(2) { manager.cars[2].moveForward(9) }
+
+        val expected = testCars.subList(1, 3)
         val testResult = manager.findWinners()
         assertEquals(expected, testResult)
     }
