@@ -15,7 +15,7 @@ object InputView {
     }
 
     fun validateCarNames(names: List<String>): List<String> {
-        if (names.isNullOrEmpty()) {
+        if (names.isEmpty()) {
             throw IllegalArgumentException("No names are entered.")
         }
         names.forEach { isNameNotBlankOrLessThanFive(it) }

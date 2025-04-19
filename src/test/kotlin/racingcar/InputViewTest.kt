@@ -16,7 +16,7 @@ class InputViewTest {
     }
 
     @Test
-    fun `validateCarNames test - throw exception if the list of name is empty or null`() {
+    fun `validateCarNames test - throw exception if the list of name is empty`() {
         val names = emptyList<String>()
         val exception = assertThrows<IllegalArgumentException> { InputView.validateCarNames(names) }
 
