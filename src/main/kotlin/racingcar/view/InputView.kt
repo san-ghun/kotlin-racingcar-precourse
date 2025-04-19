@@ -18,12 +18,14 @@ object InputView {
         if (names.isNullOrEmpty()) {
             throw IllegalArgumentException("No names are entered.")
         }
-        names.forEach { name ->
-            if (name.isBlank() || name.length > 5) {
-                throw IllegalArgumentException("Car names must be between 1 and 5 characters. Input value: '$name'")
-            }
-        }
+        names.forEach { isNameNotBlankOrLessThanFive(it) }
         return names
+    }
+
+    fun isNameNotBlankOrLessThanFive(carName: String) {
+        if (carName.isBlank() || carName.length > 5) {
+            throw IllegalArgumentException("Car names must be between 1 and 5 characters. Input value: '$carName'")
+        }
     }
 
     fun readRoundCount(): Int {
