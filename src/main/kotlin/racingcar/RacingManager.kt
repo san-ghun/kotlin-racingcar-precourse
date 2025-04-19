@@ -1,7 +1,10 @@
 package racingcar
 
-class RacingManager(val cars: List<Car>, val roundCount: Int) {
-    private val generator = RandomValueGenerator
+class RacingManager(
+    val cars: List<Car>,
+    val roundCount: Int,
+    private val generator: ValueGenerator = RandomValueGenerator,
+) {
     val currentRound: Int
         get() = _currentRound
 
