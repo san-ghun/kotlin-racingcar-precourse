@@ -20,14 +20,14 @@
     - [x] The car decides whether to move forward based on a random value (0 to 9).
     - [x] If it is 4 or more, it moves forward.
 4. Output results in each round
-    - [ ] For each round, output the names of all cars and their movement results.
-    - [ ] The movement results are expressed as `-` symbols.
+    - [x] For each round, output the names of all cars and their movement results.
+    - [x] The movement results are expressed as `-` symbols.
 5. Determine and output the winner(s)
-    - [ ] The car(s) that moved the most are determined as the winner.
+    - [x] The car(s) that moved the most are determined as the winner.
     - [ ] If there are multiple winners, output them separated by commas.
 6. Handle exceptions
     - [ ] If the car name is blank or more than 6 characters.
-    - [ ] If the number of rounds is not a number.
+    - [x] If the number of rounds is not a number.
 
 ---
 
