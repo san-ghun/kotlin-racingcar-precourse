@@ -1,4 +1,4 @@
-package racingcar
+package racingcar.view
 
 import camp.nextstep.edu.missionutils.Console
 
@@ -10,10 +10,22 @@ object InputView {
     }
 
     fun parseCarNames(input: String): List<String> {
-        return input.split(",")
-            .map { it.trim() }
-            .filter { it.isNotEmpty() }
-            .filter { it.isNotBlank() }
+        val names = input.split(",")
+        return validateCarNames(names)
+    }
+
+    fun validateCarNames(names: List<String>): List<String> {
+        if (names.isEmpty()) {
+            throw IllegalArgumentException("No names are entered.")
+        }
+        names.forEach { isNameNotBlankOrLessThanFive(it) }
+        return names
+    }
+
+    fun isNameNotBlankOrLessThanFive(carName: String) {
+        if (carName.isBlank() || carName.length > 5) {
+            throw IllegalArgumentException("Car names must be between 1 and 5 characters. Input value: '$carName'")
+        }
     }
 
     fun readRoundCount(): Int {

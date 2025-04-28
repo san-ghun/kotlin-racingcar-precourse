@@ -4,6 +4,7 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.assertThrows
+import racingcar.model.Car
 
 class CarTest {
     @Test
@@ -11,7 +12,7 @@ class CarTest {
         val car = Car("pobi")
 
         assertThat(car.name).isEqualTo("pobi")
-        assertThat(car.getPosition()).isEqualTo(0)
+        assertThat(car.position).isEqualTo(0)
     }
 
     @Test
@@ -24,12 +25,12 @@ class CarTest {
 
     @Test
     fun `throw exception when car name is empty or more than 6 characters`() {
-        val invalidNames = listOf("", "wonjun", "     ")
+        val invalidNames = listOf("", "wonjun", "  ab  ", "     ", " ")
 
         invalidNames.forEach { name ->
-            val exception = assertThrows<IllegalArgumentException> { Car(name.trim()) }
+            val exception = assertThrows<IllegalArgumentException> { Car(name) }
             assertEquals(
-                "The car name must be at least 1 character and no more than 5 characters. Input value: '${name.trim()}'",
+                "The car name must be at least 1 character and no more than 5 characters. Input value: '${name}'",
                 exception.message
             )
         }
@@ -42,7 +43,7 @@ class CarTest {
         values.forEach { value ->
             val testCar = Car("test")
             testCar.moveForward(value)
-            assertEquals(1, testCar.getPosition())
+            assertEquals(1, testCar.position)
         }
     }
 
@@ -53,7 +54,18 @@ class CarTest {
         values.forEach { value ->
             val testCar = Car("test")
             testCar.moveForward(value)
-            assertEquals(0, testCar.getPosition())
+            assertEquals(0, testCar.position)
+        }
+    }
+
+    @Test
+    fun `draw position test`() {
+        val positions = listOf(0, 1, 3, 7)
+
+        positions.forEach { position ->
+            val car = Car("test")
+            repeat(position) { car.moveForward(5) }
+            assertEquals("-".repeat(position), car.drawPosition())
         }
     }
 }

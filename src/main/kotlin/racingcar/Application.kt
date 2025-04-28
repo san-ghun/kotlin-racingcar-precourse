@@ -1,31 +1,24 @@
 package racingcar
 
+import racingcar.controller.RacingManager
+import racingcar.model.Car
+import racingcar.view.InputView
+import racingcar.view.ResultView
+
 fun main() {
     val carNames = InputView.readCarNames()
     val cars = carNames.map { name ->
         Car(name)
     }
-
-    // Read round count from user input
     val roundCount = InputView.readRoundCount()
-
-    println("Car list:")
-    cars.forEach { println("${it.name} ${it.getPosition()}")}
-    println("Round count: $roundCount")
-
-    // Create and initialize an object 'RoundManager'
-
-    // Start game
-
-    // Iterate through rounds
-
-        // Move all cars
-
-        // Show the result of round
-
-        // Check the round count
-
-    // Show winner(s)
-
+    val manager = RacingManager(cars, roundCount)
+    println("\nRace Results")
+    while (manager.isRacing()) {
+        manager.moveAllCars()
+        ResultView.printRace(manager.cars)
+        manager.goNextRound()
+    }
+    val winners = manager.findWinners()
+    ResultView.printWinners(winners)
     return
 }
