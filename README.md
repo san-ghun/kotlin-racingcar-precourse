@@ -9,9 +9,11 @@ Model
 View
 - InputView
   - user input car names
+    - check whitespace, blank, empty
     - comma-separated when entered by the user
     - each car must have a name, not exceed 5 char
   - user input number of rounds
+    - check whitespace, blank, empty
 - OutputView
   - display progress of car with car name in each round
   - after the race complete, display the winners
