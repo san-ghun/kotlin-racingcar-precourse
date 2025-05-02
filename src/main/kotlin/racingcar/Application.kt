@@ -1,26 +1,37 @@
 package racingcar
 
 fun main() {
+    println("Enter the names of the cars (comma-separated):")
     // 1. take user input car names
-        // validate input
-        // comma-separation
-        // less than 5 char, inclusive
+    val carNames = InputView.readCarNames()
 
+    println("How many rounds will be played?")
     // 2. take user input number of rounds
-        // validate input
-        // type integer
+    val numberOfRounds = InputView.readNumberOfRounds()
 
     // 3. initiate racing master
+    // initialize Cars
+    val cars = carNames.map { name ->
+        Car(name)
+    }
+    val racingMaster = RacingMaster.createRacingMaster(cars, numberOfRounds)
 
     // 4. display start of game
+    println("Race Results")
 
     // 5. start racing
-        // 1. iterate or repeat number of rounds
-        // 2. car progress based on the rand-gen number
-        // 3. display result of the round
+    // iterate or repeat number of rounds
+    repeat(racingMaster.getNumberOfRounds()) {
+    // car progress based on the rand-gen number
+        racingMaster.raceRound()
+    // display result of the round
+        OutputView.showRoundResult(racingMaster.getCars())
+    }
 
     // 6. determine winners
+    val winners = racingMaster.getWinners()
 
     // 7. display winners
-        // comma-separation
+    // comma-separation
+    OutputView.showWinners(winners)
 }
