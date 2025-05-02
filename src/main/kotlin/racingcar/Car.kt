@@ -17,9 +17,8 @@ data class Car(private val carName: String) {
 
     fun getName(): String = carName
 
-    fun move(numberGenerator: NumberGenerator = RandomNumberGenerator) {
-        val randomNumber = numberGenerator.generateNumber()
-        if (randomNumber >= 4)
+    fun move(generatedNumber: Int) {
+        if (generatedNumber >= 4)
             moveForward()
     }
 

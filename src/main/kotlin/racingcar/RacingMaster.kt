@@ -3,6 +3,7 @@ package racingcar
 class RacingMaster(
     private val cars: List<Car>,
     private val numberOfRounds: Int,
+    private val numberGenerator: NumberGenerator = RandomNumberGenerator,
 ) {
     init {
         require(cars.isNotEmpty()) { "Cars are empty" }
@@ -14,7 +15,7 @@ class RacingMaster(
     fun getNumberOfRounds(): Int = numberOfRounds
 
     fun raceRound() {
-        cars.forEach { it.move() }
+        cars.forEach { it.move(numberGenerator.generateNumber()) }
     }
 
     companion object {
