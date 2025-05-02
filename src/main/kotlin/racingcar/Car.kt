@@ -15,7 +15,7 @@ data class Car(private val carName: String) {
         }
     }
 
-    fun name(): String = carName
+    fun getName(): String = carName
 
     fun move() {
         TODO("implement with random number generator")
