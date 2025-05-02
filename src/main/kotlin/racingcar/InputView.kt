@@ -20,4 +20,13 @@ object InputView {
         }
         return carNames
     }
+
+    fun readNumberOfRounds(): Int {
+        val userInput = Console.readLine().trim()
+        val numberOfRounds = userInput
+            // validate input
+            // type integer
+            .toIntOrNull() ?: throw IllegalArgumentException("Invalid input - null in number of rounds")
+        return numberOfRounds
+    }
 }
