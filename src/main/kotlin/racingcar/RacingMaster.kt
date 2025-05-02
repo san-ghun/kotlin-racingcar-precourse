@@ -18,6 +18,12 @@ class RacingMaster(
         cars.forEach { it.move(numberGenerator.generateNumber()) }
     }
 
+    fun getWinners(): List<Car> {
+        val scores = cars.map { it.progress }
+        val maxProgress = scores.max()
+        return cars.filter { it.progress == maxProgress }
+    }
+
     companion object {
         fun createRacingMaster(
             cars: List<Car>,
