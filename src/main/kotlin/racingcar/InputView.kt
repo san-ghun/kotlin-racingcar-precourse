@@ -27,6 +27,7 @@ object InputView {
             // validate input
             // type integer
             .toIntOrNull() ?: throw IllegalArgumentException("Invalid input - null in number of rounds")
+        if (numberOfRounds == 0) throw IllegalArgumentException("Invalid input - number of rounds should be bigger than 0")
         return numberOfRounds
     }
 }
