@@ -8,6 +8,8 @@ object OutputView {
     }
 
     fun showWinners(winners: List<Car>) {
-
+        val winnerNames = winners.map { it.getName() }
+        val displayNames = winnerNames.joinToString(",")
+        println("Winners : $displayNames")
     }
 }
