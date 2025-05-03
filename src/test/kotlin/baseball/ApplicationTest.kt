@@ -1,4 +1,4 @@
-package racingcar
+package baseball
 
 import camp.nextstep.edu.missionutils.test.Assertions.assertRandomNumberInRangeTest
 import camp.nextstep.edu.missionutils.test.Assertions.assertSimpleTest
@@ -9,30 +9,25 @@ import org.junit.jupiter.api.assertThrows
 
 class ApplicationTest : NsTest() {
     @Test
-    fun `feature test`() {
+    fun `게임종료 후 재시작`() {
         assertRandomNumberInRangeTest(
             {
-                run("pobi,woni", "1")
-                assertThat(output()).contains("pobi : -", "woni : ", "Winners : pobi")
+                run("246", "135", "1", "597", "589", "2")
+                assertThat(output())
+                    .contains("낫싱", "3스트라이크", "1볼 1스트라이크", "3스트라이크", "게임 종료")
             },
-            MOVING_FORWARD,
-            STOP,
+            1, 3, 5, 5, 8, 9
         )
     }
 
     @Test
-    fun `exception test`() {
+    fun `예외 테스트`() {
         assertSimpleTest {
-            assertThrows<IllegalArgumentException> { runException("pobi,javaji", "1") }
+            assertThrows<IllegalArgumentException> { runException("1234") }
         }
     }
 
     override fun runMain() {
         main()
-    }
-
-    companion object {
-        private const val MOVING_FORWARD: Int = 4
-        private const val STOP: Int = 3
     }
 }

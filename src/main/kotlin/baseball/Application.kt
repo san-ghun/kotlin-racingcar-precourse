@@ -1,4 +1,4 @@
-package racingcar
+package baseball
 
 fun main() {
     // TODO: Implement the program

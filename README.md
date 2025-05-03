@@ -1,1 +1,1 @@
-# kotlin-racingcar-precourse
+# kotlin-baseball-precourse
