@@ -17,7 +17,7 @@ fun main() {
     val racingMaster = RacingMaster.createRacingMaster(cars, numberOfRounds)
 
     // 4. display start of game
-    println("Race Results")
+    println("\nRace Results")
 
     // 5. start racing
     // iterate or repeat number of rounds
@@ -26,6 +26,7 @@ fun main() {
         racingMaster.raceRound()
     // display result of the round
         OutputView.showRoundResult(racingMaster.getCars())
+        println()
     }
 
     // 6. determine winners
